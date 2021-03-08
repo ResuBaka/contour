@@ -331,6 +331,9 @@ jobs:
       run: ./scripts/ci-set-vars.sh
       env:
         REPOSITORY: ${{ github.event.repository.name }}
+    - name: Echo docker version
+      id: docker_version
+      run: docker --version
     - name: Build ${{ matrix.arch }} release
       shell: bash
       run: |
